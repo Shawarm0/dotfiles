@@ -110,7 +110,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
-WPATH="/mnt/c/Users/<Your Username/Desktop"
+WPATH="/mnt/c/Users/ryand/OneDrive/Desktop/"
 
 # --- WSL ---
 # for moving from and to windows.
