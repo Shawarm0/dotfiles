@@ -110,18 +110,22 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+WPATH="/mnt/c/Users/<Your Username/Desktop"
 
-
+# --- WSL ---
+# for moving from and to windows.
+alias windows="cd $WPATH"
+mvw() {
+  mv "$1" $WPATH
+}
 
 # These are my aliases
 alias zshconfig="nvim ~/.zshrc"
 alias home="cd ~/"
 alias nconfig="cd ~/.config/nvim && nvim init.lua"
-alias windows="cd /mnt/c/Users/17shl/Desktop"
 alias python="python3"
 alias reload="source ~/.zshrc"
 alias myip='curl ipinfo.io/ip'
-
 
 gitl() {
     if [ -d .git ]; then 
