@@ -75,6 +75,6 @@ startup_session default_session.kitty
 
 
 # BEGIN_KITTY_THEME
-# GitHub Dark
+# Argonaut
 include current-theme.conf
 # END_KITTY_THEME
