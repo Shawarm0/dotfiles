@@ -131,6 +131,13 @@ alias myip='curl ipinfo.io/ip'
 # This is for kitty customisation
 alias kitty-themes='kitty +kitten themes'
 
+# Start tmux if not already inside tmux
+if command -v tmux >/dev/null 2>&1 && [ -z "$TMUX" ]; then
+  tmux attach-session -t default || tmux new-session -s default
+fi
+
+
+
 gitl() {
     if [ -d .git ]; then 
         git log --oneline --graph --decorate --all
@@ -196,6 +203,33 @@ venv() {
   python3 -m venv $env_name
   source $env_name/bin/activate
 }
+
+activate() {
+  local env_name=${1:-.venv}
+  source $env_name/bin/activate
+}
+
+
+
+alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
+alias nvim-kick="NVIM_APPNAME=kickstart nvim"
+alias nvim-chad="NVIM_APPNAME=NvChad nvim"
+alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
+
+function nvims() {
+  items=("default" "kickstart" "LazyVim" "NvChad" "AstroNvim")
+  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+  if [[ -z $config ]]; then
+    echo "Nothing selected"
+    return 0
+  elif [[ $config == "default" ]]; then
+    config=""
+  fi
+  NVIM_APPNAME=$config nvim $@
+}
+
+
+bindkey -s ^a "nvims\n"
 
 deps() {
   if [ -f requirements.txt ]; then

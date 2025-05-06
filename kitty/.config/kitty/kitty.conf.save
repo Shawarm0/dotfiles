@@ -46,6 +46,7 @@ bell_on_tab yes
 
 # Hyperlinks and URLs
 open_url_with default
+open_url_modifiers kitty_mod
 allow_hyperlinks yes
 url_prefixes http https file ftp git
 url_style curly
@@ -56,8 +57,10 @@ map ctrl+down scroll_line_down
 map ctrl+page_up scroll_page_up
 map ctrl+page_down scroll_page_down
 map ctrl+home scroll_home
-map ctrl+end scroll_end map ctrl+n new_window
-map ctrl+w close_window map ctrl+x scroll_to_prompt 1
+map ctrl+end scroll_end
+map ctrl+n new_window
+map ctrl+w close_window
+map ctrl+x scroll_to_prompt 1
 map ctrl+z scroll_to_prompt -1
 
 # Layouts (split panes)
@@ -72,6 +75,6 @@ startup_session default_session.kitty
 
 
 # BEGIN_KITTY_THEME
-# 3024 Night
+# Japanesque
 include current-theme.conf
 # END_KITTY_THEME
